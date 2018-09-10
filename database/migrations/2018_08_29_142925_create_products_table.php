@@ -24,25 +24,34 @@ class CreateProductsTable extends Migration
 
             $table->decimal('price', 12, 2);
 
+            $table->unsignedInteger('currency_id');
             $table->foreign('currency_id')
                   ->references('id')
                   ->on('currencies')
                   ->onDelete('restrict');
 
+            $table->unsignedInteger('product_type_id');
             $table->foreign('product_type_id')
                   ->references('id')
                   ->on('product_types')
                   ->onDelete('restrict');
 
+            $table->unsignedInteger('product_color_id');
             $table->foreign('product_color_id')
                   ->references('id')
                   ->on('product_colors')
                   ->onDelete('restrict');
 
+            $table->unsignedInteger('product_size_id');
             $table->foreign('product_size_id')
                   ->references('id')
                   ->on('product_sizes')
                   ->onDelete('restrict');
+
+            $table->integer('order_id')->unsigned()->index()->nullable();
+            $table->foreign('order_id')->references('id')->on('orders');
+
+            $table->unique(array('product_type_id', 'product_color_id', 'product_size_id'));
 
             $table->timestamps();
         });
