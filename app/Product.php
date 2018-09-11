@@ -3,7 +3,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Order;
 
 /**
   * price
@@ -17,23 +16,23 @@ class Product extends Model
     protected $fillable = ['price'];
 
     public function color() {
-       return $this->belongsTo('App\ProductColor');
+       return $this->belongsTo('App\ProductColor', 'product_color_id');
     }
 
     public function size() {
-       return $this->belongsTo('App\ProductSize');
+       return $this->belongsTo('App\ProductSize', 'product_size_id');
     }
 
     public function type() {
-       return $this->belongsTo('App\ProductType');
+       return $this->belongsTo('App\ProductType', 'product_type_id');
     }
 
     public function currency() {
-       return $this->belongsTo('App\Currency');
+       return $this->belongsTo('App\Currency', 'currency_id');
     }
 
-    public function order() {
-        return $this->belongsTo(Order::class);
+    public function orders() {
+        return $this->belongsToMany('App\Order')->withTimestamps();;
     }
 
 }

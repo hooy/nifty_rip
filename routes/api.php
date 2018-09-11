@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Order;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,14 +19,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+# Products
+Route::get('products', 'ProductController@index');
+Route::get('products/{id}', 'ProductController@show');
 
-Route::get('products', function() {
-    // If the Content-Type and Accept headers are set to 'application/json',
-    // this will return a JSON structure. This will be cleaned up later.
-    return Product::all();
-});
-
-
-Route::get('products/{id}', function($id) {
-    return Product::find($id);
-});
+# Orders
+Route::get('orders/', 'OrderController@index');
+Route::get('orders/{id}', 'ProductController@show');

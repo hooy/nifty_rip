@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class ProductColorsSeeder extends Seeder
+class UsersSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +11,6 @@ class ProductColorsSeeder extends Seeder
      */
     public function run()
     {
-
-        factory(App\ProductColor::class, 50)->create();
+        factory(App\User::class, 50)->create();
     }
 }

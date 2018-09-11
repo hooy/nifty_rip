@@ -9,6 +9,7 @@ class ProductsSeeder extends Seeder
      * Before running this seed, be sure you run
      * other seeds, because every product instance is tightly coupled
      * with other business instances, like currency or ProductColor
+     * It is highly recomended to use DatabaseSeeder instead of invoking separate seeders
      * @return void
      */
     public function run()

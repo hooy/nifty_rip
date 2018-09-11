@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class ProductSizeSeeder extends Seeder
+class ProductSizesSeeder extends Seeder
 {
     /**
      * Run the database seeds.

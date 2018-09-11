@@ -11,4 +11,9 @@ use Illuminate\Database\Eloquent\Model;
 class ProductSize extends Model
 {
     protected $fillable = ['name', 'measurement'];
+
+    public function products()
+    {
+        return $this->hasMany('App\Product', 'product_id');
+    }
 }

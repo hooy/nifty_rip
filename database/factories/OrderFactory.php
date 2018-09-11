@@ -13,10 +13,9 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(App\Product::class, function (Faker $faker) {
-
+$factory->define(App\Order::class, function (Faker $faker) {
     return [
-        'name' => $faker->word(),
-        'price' => $faker->randomFloat(2, 10, 200),
+        'user_id' => App\User::all()->random()->id,
+        'order_number' => $faker->uuid(),
     ];
 });
