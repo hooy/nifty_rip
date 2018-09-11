@@ -15,8 +15,8 @@ class CreateProductSizesTable extends Migration
     {
         Schema::create('product_sizes', function (Blueprint $table) {
             $table->increments('id');
-            $table->char('name', 100)->index();
-            $table->char('measurement', 100);
+            $table->string('name', 100)->index();
+            $table->string('measurement', 100);
             $table->timestamps();
 
             $table->unique(array('name', 'measurement'));

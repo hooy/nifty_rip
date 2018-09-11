@@ -12,6 +12,6 @@ class ProductColorsSeeder extends Seeder
     public function run()
     {
 
-        factory(App\ProductColor::class, 50)->create();
+        factory(App\ProductColor::class, 10)->create();
     }
 }

@@ -13,7 +13,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    protected $fillable = ['price'];
+    protected $fillable = [
+        'price',
+        'name',
+        'slug',
+        'product_type_id',
+        'product_color_id',
+        'product_size_id',
+        'currency_id',
+    ];
 
     public function color() {
        return $this->belongsTo('App\ProductColor', 'product_color_id');

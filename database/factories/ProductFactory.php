@@ -16,7 +16,8 @@ use Faker\Generator as Faker;
 $factory->define(App\Product::class, function (Faker $faker) {
 
     return [
-        'name' => $faker->word(),
+        'name' => $faker->realText($faker->numberBetween(10, 20)),
+        'slug' => $faker->unique()->slug(),
         'price' => $faker->randomFloat(2, 10, 200),
     ];
 });

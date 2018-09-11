@@ -18,15 +18,16 @@ class ProductResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
+            // 'slug' => $this->slug,
             'price' => [
                 'amount' => $this->price,
-                'currency' => $this->currency->iso,
-                'currency_symbol' => $this->price,
+                'currency' => $this->currency->iso_code,
+                'currency_symbol' => $this->currency->symbol,
             ],
             # consider what is the best for your situation
             # separate resource or just plain name
-            'color' => new ColorResource($this->color),
-            'currency' => new CurrencyResource($this->currency),
+            # new ColorResource()
+            'color' => $this->color->name,
             'size' => $this->size->name,
             'type' => $this->type->name,
             'created_at' => $this->created_at,

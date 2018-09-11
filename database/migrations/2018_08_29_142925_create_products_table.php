@@ -23,7 +23,8 @@ class CreateProductsTable extends Migration
             $table->increments('id');
 
             $table->decimal('price', 12, 2);
-            $table->char('name', 100);
+            $table->string('name', 100);
+            $table->string('slug', 100)->unique()->index();
 
             $table->unsignedInteger('currency_id');
             $table->foreign('currency_id')
