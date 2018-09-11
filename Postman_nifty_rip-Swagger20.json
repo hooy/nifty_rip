@@ -1,0 +1,299 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "nifty_rip",
+    "description": "TODO: Add Description"
+  },
+  "host": "localhost:8000",
+  "basePath": "/api",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/products": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "List products",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "ProductsGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      },
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Create product",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "ProductsPost",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CreateProductrequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/orders": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "List orders",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "OrdersGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      },
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Create order",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "OrdersPost",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CreateOrderrequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/products/1": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Product",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "Products1Get",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/orders/type/vitae": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "List orders by type",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "OrdersTypeVitaeGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "CreateProductrequest": {
+      "title": "Create productRequest",
+      "example": {
+        "name": "KAKAHA2",
+        "slug": "kakaha1",
+        "type": "vitae",
+        "size": "S",
+        "color": "Maroon",
+        "currency": "DJF",
+        "price": "99.9"
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "",
+          "example": "KAKAHA2",
+          "type": "string"
+        },
+        "slug": {
+          "description": "",
+          "example": "kakaha1",
+          "type": "string"
+        },
+        "type": {
+          "description": "",
+          "example": "vitae",
+          "type": "string"
+        },
+        "size": {
+          "description": "",
+          "example": "S",
+          "type": "string"
+        },
+        "color": {
+          "description": "",
+          "example": "Maroon",
+          "type": "string"
+        },
+        "currency": {
+          "description": "",
+          "example": "DJF",
+          "type": "string"
+        },
+        "price": {
+          "description": "",
+          "example": "99.9",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "slug",
+        "type",
+        "size",
+        "color",
+        "currency",
+        "price"
+      ]
+    },
+    "CreateOrderrequest": {
+      "title": "Create orderRequest",
+      "example": {
+        "products": [
+          223,
+          231
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "products": {
+          "description": "",
+          "example": [
+            223,
+            231
+          ],
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "required": [
+        "products"
+      ]
+    }
+  }
+}
